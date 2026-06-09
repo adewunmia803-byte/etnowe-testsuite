@@ -1,2 +1,2 @@
 # etnowe-testsuite
-This is a maestro studio mobile app automation yaml script
+This repository contains QA documentation, including automated test script, bug reports, test cases, and test plans created during personal projects.
