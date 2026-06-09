@@ -1,0 +1,155 @@
+# QA Bug Reports
+
+---
+
+## BUG-001: Merchant Location Not Updating After Selection
+
+**Module:** Merchant Management  
+**Priority:** High  
+
+### Description:
+When editing a merchant’s location and selecting a new value from the dropdown, the selected location does not reflect or save on the UI.
+
+### Steps to Reproduce:
+1. Open merchant profile page  
+2. Click on **Edit Location**  
+3. Select a new location from the dropdown  
+4. Click Save  
+5. Refresh the page  
+
+### Expected Result:
+Selected location should be saved and displayed correctly.
+
+### Actual Result:
+Location remains unchanged after saving or refresh.
+
+### Test Case:
+**TC-001: Verify merchant location update functionality**
+
+- **Precondition:** Merchant profile exists  
+- **Steps:**
+  1. Navigate to merchant profile
+  2. Click Edit Location
+  3. Select a valid location
+  4. Save changes
+  5. Refresh page
+- **Expected Result:** Updated location should persist after refresh
+
+---
+
+## BUG-002: Duplicate “Cancel Order” Buttons Displayed
+
+**Module:** Order Management  
+**Priority:** Medium  
+
+### Description:
+Two “Cancel Order” buttons appear on the same order details page.
+
+### Steps to Reproduce:
+1. Open order details page  
+2. Scroll to action buttons section  
+
+### Expected Result:
+Only one Cancel Order button should be visible.
+
+### Actual Result:
+Two identical Cancel Order buttons are displayed.
+
+### Test Case:
+**TC-002: Verify single cancel order button display**
+
+- **Precondition:** Order exists  
+- **Steps:**
+  1. Open order details page
+  2. Check action buttons
+- **Expected Result:** Only one Cancel Order button should appear
+
+---
+
+## BUG-003: Inventory Items Not Fully Synced During Onboarding
+
+**Module:** Inventory Management  
+**Priority:** High  
+
+### Description:
+During onboarding, only 20 out of 40 master inventory items are transferred to store inventory while the remaining 20 stay in pending status.
+
+### Steps to Reproduce:
+1. Complete onboarding process  
+2. Upload/sync master inventory  
+3. Navigate to store inventory tab  
+
+### Expected Result:
+All 40 items should be successfully transferred to store inventory.
+
+### Actual Result:
+Only 20 items appear in store inventory; 20 remain pending.
+
+### Test Case:
+**TC-003: Verify complete inventory sync during onboarding**
+
+- **Precondition:** Master inventory contains 40 items  
+- **Steps:**
+  1. Start onboarding process
+  2. Complete inventory sync
+  3. Open store inventory tab
+- **Expected Result:** All 40 items should be present
+
+---
+
+## BUG-004: Search Function Returns Irrelevant Results
+
+**Module:** Product Search  
+**Priority:** Medium  
+
+### Description:
+Search results do not match the entered keyword; unrelated products are displayed.
+
+### Steps to Reproduce:
+1. Go to product search page  
+2. Enter keyword (e.g. “rice”)  
+3. Submit search  
+
+### Expected Result:
+Only products related to the keyword should be displayed.
+
+### Actual Result:
+Unrelated products are also shown in results.
+
+### Test Case:
+**TC-004: Verify search accuracy**
+
+- **Steps:**
+  1. Enter valid keyword
+  2. Click search
+- **Expected Result:** Only relevant products are returned
+
+---
+
+## BUG-005: Checkout Page Freezes on Slow Network
+
+**Module:** Checkout  
+**Priority:** High  
+
+### Description:
+Checkout page becomes unresponsive or freezes when network speed is slow.
+
+### Steps to Reproduce:
+1. Enable slow network simulation  
+2. Add item to cart  
+3. Proceed to checkout  
+
+### Expected Result:
+Checkout page should load with a loading indicator and remain responsive.
+
+### Actual Result:
+Page freezes or becomes unresponsive.
+
+### Test Case:
+**TC-005: Verify checkout stability under poor network conditions**
+
+- **Steps:**
+  1. Simulate slow network
+  2. Add item to cart
+  3. Proceed to checkout
+- **Expected Result:** Page should remain stable with loading state
